@@ -1,0 +1,213 @@
+@import 'variables';
+
+.modal_link {
+  position: absolute;
+  top: 7em;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  display: none;
+  animation: slide-out-bck-cente 3s ease-in-out;
+}
+
+ul {
+  width: 85%;
+  height: 36vh;
+  margin: 0 auto;
+  padding: 0 1em;
+  border-radius: 15px;
+  background-color: #fff;
+  text-align: left;
+}
+
+li {
+  padding: 1.5em;
+  list-style-type: none;
+}
+li:nth-child(odd){
+  animation: slide-in-fwd-center 3s ease-in;
+}
+
+li:nth-child(2){
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  animation: slide-in-fwd-center 3s ease-in;
+}
+
+a {
+  color: $Black;
+  text-decoration: none;
+}
+
+.modalSection {
+  position: absolute;
+  top: -10em;
+  width: 100vw;
+  left: -2em;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  animation: slide-out-fwd-center 3s ease-in;
+  .modal-top-bar {
+    margin: 1em 0 auto;
+    display: flex;
+    justify-content: space-between;   }
+  .section_stocks:hover {
+    border: 6px solid $Moderate_cyan;  }
+}
+.modalSuccess {
+  position: absolute;
+  top: -10em;
+  width: 100vw;
+  height: 80vh;
+  left: -2em;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  animation: slide-in-fwd-center 3s ease-in;
+  button {
+      padding: 1em;
+      border-radius: 20px;
+      width: 30%;
+      background-color: $Moderate_cyan;
+      color: white;  }
+}
+
+#modalClose {
+  margin: 0.5em 0em;
+}
+
+.check {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.2em auto;
+}
+
+input[type="radio"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 1em;
+  width: 2.5em;
+  height: 2.5em;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transition: 120ms transform ease-in-out;
+}
+input[type="radio"]:checked::before {
+  // transform: scale(1);
+}
+input[type="radio"]:hover {
+  background-color: $Moderate_cyan;
+}
+
+.donate {
+  display:block;
+  color: $Dark_gray;
+  border-top: 2px solid $Dark_gray;
+  padding: em(5px);
+  text-align: center;
+  display: none;
+  span {
+    display: flex;
+    justify-content: space-between;
+    input {
+      padding: 0.7em;
+      width: 50%;
+      border-radius: 20px;    }
+    button {
+      padding: 1em;
+      border-radius: 20px;
+      width: 30%;
+      background-color: $Moderate_cyan;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+
+
+//animations
+
+// @keyframes slideIn {
+//   0%{
+//     height: 0;
+//     transform: translateX(-100px);
+//     opacity: 0.4;
+//   }
+// }
+
+// @keyframes dropbox {
+//   0% {
+//     transform: translateY(-400px);
+//     height: 0;
+//   }
+//   90% {
+//     transform: translateY(50px);
+//   }
+// }
+
+@-webkit-keyframes slide-in-fwd-center {
+    0% {
+    -webkit-transform: translateZ(-1400px);
+            transform: translateZ(-1400px);
+    opacity: 0;
+    }
+    100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+    }
+}
+@keyframes slide-in-fwd-center {
+    0% {
+    -webkit-transform: translateZ(-1400px);
+            transform: translateZ(-1400px);
+    opacity: 0;
+    }
+    100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+    }
+}
+
+@-webkit-keyframes slide-out-bck-center {
+    0% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+    }
+    100% {
+    -webkit-transform: translateZ(-1100px);
+            transform: translateZ(-1100px);
+    opacity: 0;
+    }
+}
+@keyframes slide-out-bck-center {
+    0% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+    }
+    100% {
+    -webkit-transform: translateZ(-1100px);
+            transform: translateZ(-1100px);
+    opacity: 0;
+    }
+}
+
+
+//transform:scale(1)background: rgba(0,0,0,0)fadein .5s cubic-beizer(0.165, 0.840, 0.440, 1000) forwardsbackground-color: transparent;

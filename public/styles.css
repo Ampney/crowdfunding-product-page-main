@@ -1,0 +1,514 @@
+@import url("https:fonts.googleapis.comcss2?family=Commissioner:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  background: #eee;
+  font-family: "Commissioner", sans-serif;
+}
+
+.modal_link {
+  position: absolute;
+  top: 7em;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  display: none;
+  animation: slide-out-bck-cente 3s ease-in-out;
+}
+
+ul {
+  width: 85%;
+  height: 36vh;
+  margin: 0 auto;
+  padding: 0 1em;
+  border-radius: 15px;
+  background-color: #fff;
+  text-align: left;
+}
+
+li {
+  padding: 1.5em;
+  list-style-type: none;
+}
+
+li:nth-child(odd) {
+  animation: slide-in-fwd-center 3s ease-in;
+}
+
+li:nth-child(2) {
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  animation: slide-in-fwd-center 3s ease-in;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.modalSection {
+  position: absolute;
+  top: -10em;
+  width: 100vw;
+  left: -2em;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  animation: slide-out-fwd-center 3s ease-in;
+}
+.modalSection .modal-top-bar {
+  margin: 1em 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.modalSection .section_stocks:hover {
+  border: 6px solid #3cb4ac;
+}
+
+.modalSuccess {
+  position: absolute;
+  top: -10em;
+  width: 100vw;
+  height: 80vh;
+  left: -2em;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  animation: slide-in-fwd-center 3s ease-in;
+}
+.modalSuccess button {
+  padding: 1em;
+  border-radius: 20px;
+  width: 30%;
+  background-color: #3cb4ac;
+  color: white;
+}
+
+#modalClose {
+  margin: 0.5em 0em;
+}
+
+.check {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.2em auto;
+}
+
+input[type=radio] {
+  appearance: none;
+  background-color: #fff;
+  margin: 1em;
+  width: 2.5em;
+  height: 2.5em;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+input[type=radio]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transition: 120ms transform ease-in-out;
+}
+
+input[type=radio]:hover {
+  background-color: #3cb4ac;
+}
+
+.donate {
+  display: block;
+  color: #7a7a7a;
+  border-top: 2px solid #7a7a7a;
+  padding: em(5px);
+  text-align: center;
+  display: none;
+}
+.donate span {
+  display: flex;
+  justify-content: space-between;
+}
+.donate span input {
+  padding: 0.7em;
+  width: 50%;
+  border-radius: 20px;
+}
+.donate span button {
+  padding: 1em;
+  border-radius: 20px;
+  width: 30%;
+  background-color: #3cb4ac;
+  color: white;
+  cursor: pointer;
+}
+
+@-webkit-keyframes slide-in-fwd-center {
+  0% {
+    -webkit-transform: translateZ(-1400px);
+    transform: translateZ(-1400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-fwd-center {
+  0% {
+    -webkit-transform: translateZ(-1400px);
+    transform: translateZ(-1400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slide-out-bck-center {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateZ(-1100px);
+    transform: translateZ(-1100px);
+    opacity: 0;
+  }
+}
+@keyframes slide-out-bck-center {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateZ(-1100px);
+    transform: translateZ(-1100px);
+    opacity: 0;
+  }
+}
+@media only screen and (min-width: 320px) {
+  .desktop-link {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .header {
+    background: url("../images/image-hero-desktop.jpg") no-repeat center/cover !important;
+  }
+  .header .top-bar .hamburger {
+    display: none;
+  }
+  .header .desktop-link {
+    display: flex;
+  }
+  .header .desktop-link ul {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: transparent !important;
+    background-size: cover;
+  }
+  .header .desktop-link ul li {
+    margin: 0;
+    padding: 0 1em;
+  }
+  .header .desktop-link ul a {
+    color: white;
+  }
+  .header .desktop-link ul a:hover {
+    border-bottom: 2px solid white;
+  }
+
+  .section {
+    text-align: center;
+  }
+  .section h3 {
+    margin: 0.5em 0 !important;
+  }
+  .section #logo {
+    left: 19em !important;
+  }
+  .section .toggles #btn_one {
+    width: 30%;
+    cursor: pointer;
+  }
+  .section .toggles #btn_one:hover {
+    background-color: #147b74;
+  }
+  .section .section_funds {
+    display: grid;
+    width: 90% !important;
+    grid-template-areas: "a b c" "d e f" "g g g";
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .section #a {
+    grid-area: a;
+    font-size: 2.5em;
+  }
+  .section #b {
+    grid-area: b;
+    font-size: 2.5em;
+  }
+  .section #c {
+    grid-area: c;
+    font-size: 2.5em;
+  }
+  .section #d {
+    grid-area: d;
+    font-size: 1.3rem;
+  }
+  .section #e {
+    grid-area: e;
+    font-size: 1.3rem;
+  }
+  .section #f {
+    font-size: 1.3rem;
+    grid-area: f;
+  }
+  .section .section_funds progress[value] {
+    grid-area: g;
+    width: 95%;
+  }
+
+  .section_stocks .dt-flex {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .section_stocks .dt-flex h4 {
+    margin: 0.5em 9em 0.5em 0.5em;
+  }
+  .section_stocks .dt-flex h6 {
+    margin: 0.5em 5em 0.5em 0.5em;
+  }
+  .section_stocks .dt-flex button {
+    width: 50%;
+    cursor: pointer;
+  }
+  .section_stocks .dt-flex button:hover {
+    background-color: #147b74;
+  }
+
+  .modalSection {
+    left: -4em;
+  }
+  .modalSection .section_description {
+    margin: 1.5em 3.5em;
+  }
+
+  .modalSuccess {
+    left: -3.9em;
+  }
+  .modalSuccess .section_stocks {
+    margin: 7em 1.7em;
+  }
+  .modalSuccess .section_stocks button {
+    width: 50%;
+    cursor: pointer;
+  }
+  .modalSuccess .section_stocks button:hover {
+    background-color: #147b74;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .section #logo {
+    left: 27em !important;
+  }
+
+  .section_stocks .dt-flex h4 {
+    margin: 0.5em 15em 0.5em 0.5em;
+  }
+  .section_stocks .dt-flex h6 {
+    margin: 0.5em 11em 0.5em 0.5em;
+  }
+  .section_stocks .dt-flex button {
+    width: 40%;
+  }
+
+  .modalSuccess {
+    left: -5em;
+    height: 100vh;
+  }
+  .modalSuccess .section_stocks {
+    margin: 10em auto;
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .container {
+    text-align: center;
+    max-width: 1440px;
+  }
+  .container .section #logo {
+    left: 38em !important;
+  }
+}
+.section_stocks, .section_description, .section_funds, .section {
+  background: #fff;
+  height: auto;
+  width: 88%;
+  margin: 0 auto;
+  padding: 1em 0;
+  border-radius: 25px;
+  color: #000;
+}
+
+.container {
+  text-align: center;
+  height: auto;
+}
+
+.header {
+  width: 100%;
+  height: 60vh;
+  background: url("../images/image-hero-mobile.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.wrapper-pad {
+  padding: 2em 1em;
+  margin: 0 auto;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.top-bar .top-bar-img {
+  padding: 0;
+}
+.top-bar .hamburger {
+  padding: 0;
+}
+
+.section {
+  position: relative;
+  top: -4rem;
+  padding: 1em;
+}
+.section #logo {
+  position: absolute;
+  top: -2rem;
+  left: 9rem;
+}
+.section h3 {
+  font-size: 2rem;
+  margin: 1em 0 1em 0;
+}
+.section p {
+  color: #7a7a7a;
+  font-size: 1rem;
+}
+
+.toggles {
+  display: flex;
+  justify-content: space-around;
+  margin: 0.5em auto;
+  padding: 0.5em;
+}
+.toggles #btn_one {
+  border-radius: 50px;
+  border-style: none;
+  width: 70%;
+  padding: 1em;
+  font-size: 1em;
+  color: #fff;
+  background-color: #3cb4ac;
+}
+.toggles #bookmark {
+  border-radius: 60%;
+  border-style: none;
+}
+
+.section_funds {
+  margin: 1em auto;
+}
+.section_funds h5 {
+  font-size: 3rem;
+  padding: 0.5em 0;
+}
+.section_funds p {
+  font-size: 1.5rem;
+  padding: 0.5em 0;
+  color: #7a7a7a;
+}
+.section_funds progress[value] {
+  margin: 0.5em 0;
+  width: 85%;
+  height: 3em;
+  color: #3cb4ac;
+}
+
+.section_description {
+  margin: 1.5em auto;
+  padding: 1em;
+  text-align: left;
+}
+.section_description h6 {
+  font-size: 1.7rem;
+}
+.section_description p {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  color: #7a7a7a;
+  margin: 1em 0;
+}
+
+.section_stocks {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  padding: 1em;
+  width: 95%;
+  margin: 2em auto;
+}
+.section_stocks h4 {
+  margin: 0.5em auto;
+  font-size: 1.1rem;
+}
+.section_stocks h5 {
+  margin: 0.5em auto 1.5em;
+  font-size: 1rem;
+  color: #3cb4ac;
+  font-weight: 700;
+}
+.section_stocks p {
+  margin: 1em auto 1.5em;
+}
+.section_stocks h6 {
+  margin: 0.5em auto 1em;
+}
+.section_stocks h6::after {
+  display: inline;
+  content: " left";
+  font-size: 1.2rem;
+  color: #7a7a7a;
+  font-weight: 400;
+}
+.section_stocks .btn {
+  border-radius: 50px;
+  border-style: none;
+  width: 70%;
+  padding: 1em;
+  font-size: 1em;
+  color: #fff;
+  background-color: #3cb4ac;
+}
+
+#tabi {
+  opacity: 0.3;
+}
+
+/*# sourceMappingURL=styles.css.map */
